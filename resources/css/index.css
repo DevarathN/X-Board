@@ -1,0 +1,68 @@
+body{
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar-brand{
+    
+    text-decoration: none;
+    font-size:24px;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 1.5rem;
+
+}
+.carousel-text{
+    padding: 0.6rem 1.3rem;
+}
+.carousel-sub-heading{
+    
+    display: flex;
+    flex-direction: row;
+    color: rgb(126, 125, 125);
+    font-size: 1rem;
+}
+
+.description{
+    color:rgb(126, 125, 125);
+    font-size: 1rem;
+}
+.carousel-heading{
+    padding: 0.7rem 0;
+    color: black;
+}
+.dot{
+  height: 5px;
+  width: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-right: 1.5rem;
+}
+.navbar{
+    border-bottom: 2px solid rgb(209, 208, 208);
+    padding:2rem 0rem 1rem 4rem
+}
+.h1{
+    margin:0 4rem
+}
+.today{
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 2rem 0 0;
+}
+.subheading{
+    color: rgb(153, 153, 153);
+    font-size: 1rem;
+    
+}
+
+.carousel-item img:hover{
+    filter: brightness(50%);
+}
+
+p{
+    font-size: 1rem;
+    
+}
