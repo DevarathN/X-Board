@@ -25,7 +25,7 @@ async function addAccordionToHTML(){
             <a href = ${ele.link}>
                 <div class="carousel-item">
                     
-                    <img src="${ele.enclosure.link}" class="d-block w-100" alt="...">
+                    <img src="${ele.thumbnail}" class="d-block w-100" alt="...">
                     <div class='carousel-text'>
                         <div class='carousel-heading'>
                             <h4>${ele.title}<h4>
