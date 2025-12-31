@@ -1,14 +1,5 @@
-function extractDescription(html) {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, "text/html");
-
-  return doc.querySelector(
-    "div p"
-  )?.textContent || "";
-}
-
 async function addAccordionToHTML(){
-    const res1 = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.thenation.com/subject/politics/feed/')
+    const res1 = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://slate.com/feeds/news-and-politics.rss')
     const accordion1= await res1.json()
     const res2 = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://flipboard.com/@dfletcher/india-tech-b2meqpd6z.rss')
     const accordion2= await res2.json()
@@ -28,13 +19,12 @@ async function addAccordionToHTML(){
         if(author ==''){
             author = 'Anonymous'
         }
-        const cleanDescription = extractDescription(ele.description)
         if(ind!=0){
             temp1+=`
             <a href = ${ele.link}>
                 <div class="carousel-item">
                     
-                    <img src=${ele.thumbnail} class="d-block w-100" alt="...">
+                    <img src=${ele.enclosure.link} class="d-block w-100" alt="...">
                     <div class='carousel-text'>
                         <div class='carousel-heading'>
                             <h4>${ele.title}<h4>
@@ -45,7 +35,7 @@ async function addAccordionToHTML(){
                             </div>
                             <p>${newDate}</p>
                         </div>
-                        <div class='description'>${cleanDescription}</div>
+                        <div class='description'>${ele.description}</div>
                     </div>
                     
                 </div>
@@ -59,7 +49,7 @@ async function addAccordionToHTML(){
             temp1+=`
             <a href = ${ele.link}>
                 <div class="carousel-item active">
-                    <img src="${ele.thumbnail}" class="d-block w-100" alt="...">
+                    <img src="${ele.enclosure.link}" class="d-block w-100" alt="...">
                     <div class='carousel-text'>
                         <div class='carousel-heading'>
                             <h4>${ele.title}<h4>
@@ -70,7 +60,7 @@ async function addAccordionToHTML(){
                             </div>
                             <p>${newDate}</p>
                         </div>
-                        <div class='description'>${cleanDescription}</div>
+                        <div class='description'>${ele.description}</div>
                     </div>
                 </div>
             </a>
