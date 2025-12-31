@@ -59,7 +59,7 @@ async function addAccordionToHTML(){
             temp1+=`
             <a href = ${ele.link}>
                 <div class="carousel-item active">
-                    <img src="${ele.enclosure.link}" class="d-block w-100" alt="...">
+                    <img src="${ele.thumbnail}" class="d-block w-100" alt="...">
                     <div class='carousel-text'>
                         <div class='carousel-heading'>
                             <h4>${ele.title}<h4>
@@ -70,7 +70,7 @@ async function addAccordionToHTML(){
                             </div>
                             <p>${newDate}</p>
                         </div>
-                        <div class='description'>${ele.description}</div>
+                        <div class='description'>${cleanDescription}</div>
                     </div>
                 </div>
             </a>
