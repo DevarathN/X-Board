@@ -3,7 +3,7 @@ function extractDescription(html) {
   const doc = parser.parseFromString(html, "text/html");
 
   return doc.querySelector(
-    ".wp-block-the-nation-dek p"
+    "div p"
   )?.textContent || "";
 }
 
