@@ -1,6 +1,6 @@
 
 async function addAccordionToHTML(){
-    const res1 = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://flipboard.com/@thenewsdesk/the-latest-on-coronavirus-covid-19-t82no8kmz.rss')
+    const res1 = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.thenation.com/subject/politics/feed/')
     const accordion1= await res1.json()
     const res2 = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://flipboard.com/@dfletcher/india-tech-b2meqpd6z.rss')
     const accordion2= await res2.json()
