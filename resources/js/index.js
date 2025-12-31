@@ -1,3 +1,11 @@
+function extractDescription(html) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, "text/html");
+
+  return doc.querySelector(
+    ".wp-block-the-nation-dek p"
+  )?.textContent || "";
+}
 
 async function addAccordionToHTML(){
     const res1 = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.thenation.com/subject/politics/feed/')
@@ -20,6 +28,7 @@ async function addAccordionToHTML(){
         if(author ==''){
             author = 'Anonymous'
         }
+        const cleanDescription = extractDescription(ele.description)
         if(ind!=0){
             temp1+=`
             <a href = ${ele.link}>
@@ -36,7 +45,7 @@ async function addAccordionToHTML(){
                             </div>
                             <p>${newDate}</p>
                         </div>
-                        <div class='description'>${ele.description}</div>
+                        <div class='description'>${cleanDescription}</div>
                     </div>
                     
                 </div>
